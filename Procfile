@@ -1,1 +1,1 @@
-web gunicorn run:server
+web gunicorn covid_India_dasboard:server

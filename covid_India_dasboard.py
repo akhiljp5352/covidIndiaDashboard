@@ -12,12 +12,6 @@ import dash_bootstrap_components as dbc
 import plotly.express as px
 import plotly.graph_objs as go
 
-from flask import Flask
-import os
-
-server = Flask(__name__)
-server.secret_key = os.environ.get('secret_key', 'secret')
-
 
 # In[2]:
 
@@ -90,10 +84,11 @@ print(col_names)
 # In[7]:
 
 
-app = dash.Dash(__name__, server = server, external_stylesheets=[dbc.themes.BOOTSTRAP],
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP],
                 meta_tags=[{'name': 'viewport',
                             'content': 'width=device-width, initial-scale=1.0'}]
                 )
+server=app.server
 
 
 # In[ ]:
